@@ -1,4 +1,4 @@
-.PHONY: build run test clean docs
+.PHONY: build run test clean docs install
 
 all: build
 
@@ -7,6 +7,9 @@ build:
 
 release:
 	cargo build --release
+
+install: release
+	cargo install --path .
 
 run:
 	cargo run
