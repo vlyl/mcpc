@@ -23,7 +23,16 @@
 - Rust and Cargo (can be installed via [rustup](https://rustup.rs/))
 
 ### Build and Install
+
+Using Make:
 ```bash
+# Build and install in one step
+make install
+```
+
+Or using Cargo directly:
+```bash
+# Install from local repository
 cargo install --path .
 ```
 
@@ -128,16 +137,28 @@ To integrate with Claude for Desktop, configure your server in Claude's configur
 
 ## Development
 
+### Available Make Commands
+
+```bash
+make              # Build the project (same as 'make build')
+make build        # Build the project in debug mode
+make release      # Build the project in release mode
+make install      # Build in release mode and install
+make run          # Run the project in debug mode
+make run-release  # Run the project in release mode
+make test         # Run tests
+make docs         # Generate and open documentation
+make clean        # Clean build artifacts
+make fmt          # Format code with rustfmt
+make check        # Check for compilation errors
+make clippy       # Run Clippy lints
+```
+
 ### Build from Source
 ```bash
 git clone https://github.com/yourusername/mcpc.git
 cd mcpc
-cargo build --release
-```
-
-### Running Tests
-```bash
-cargo test
+make install
 ```
 
 ## License
